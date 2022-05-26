@@ -4,6 +4,13 @@ import { LoginContainer } from './../containers/Login';
 import { RecoveryPassword } from './../containers/RecoveryPassword';
 import { HomeContainer } from './../pages/HomeContainer';
 import { NotFoundScreen } from './../pages/NotFoundScreen';
+import PasswordRecovery from './../pages/PasswordRecovery';
+import SendEmail from './../pages/SendEmail';
+import NewPassword from './../pages/NewPassword';
+import MyAccount from './../pages/MyAccount';
+import CreateAccount from './../pages/CreateAccount';
+import Checkout from './../pages/Checkout';
+import Orders from './../pages/Orders';
 
 
 
@@ -19,9 +26,39 @@ const routes = [
     component: <LoginContainer />,
   },
   {
-    path: '/recovery-password',
+    path: '/password-recovery',
     name: 'NotFound',
-    component: <RecoveryPassword />,
+    component: <PasswordRecovery />,
+  },
+  {
+    path: '/send-email',
+    name: 'SendEmail',
+    component: <SendEmail />,
+  },
+  {
+    path: '/new-password',
+    name: 'NewPassword',
+    component: <NewPassword />,
+  },
+  {
+    path: '/account',
+    name: 'Acount',
+    component: <MyAccount />,
+  },
+  {
+    path: '/sigup',
+    name: 'SingUp',
+    component: <CreateAccount />,
+  },
+  {
+    path: '/checkout',
+    name: 'Checkout',
+    component: <Checkout />,
+  },
+  {
+    path: '/orders',
+    name: 'Orders',
+    component: <Orders />,
   },
   {
     path: '*',
