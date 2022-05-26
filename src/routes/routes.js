@@ -1,8 +1,6 @@
 import React from 'react';
 import { Route } from "react-router-dom";
-import { LoginContainer } from './../containers/Login';
-import { RecoveryPassword } from './../containers/RecoveryPassword';
-import { HomeContainer } from './../pages/HomeContainer';
+
 import { NotFoundScreen } from './../pages/NotFoundScreen';
 import PasswordRecovery from './../pages/PasswordRecovery';
 import SendEmail from './../pages/SendEmail';
@@ -11,6 +9,8 @@ import MyAccount from './../pages/MyAccount';
 import CreateAccount from './../pages/CreateAccount';
 import Checkout from './../pages/Checkout';
 import Orders from './../pages/Orders';
+import Home from './../pages/Home';
+import Login from '../pages/Login';
 
 
 
@@ -18,12 +18,12 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: <HomeContainer />,
+    component: <Home />,
   },
   {
     path: '/login',
     name: 'Login',
-    component: <LoginContainer />,
+    component: <Login />,
   },
   {
     path: '/password-recovery',

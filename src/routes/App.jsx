@@ -1,27 +1,24 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from '../containers/Layout';
-import { LoginContainer } from '../containers/Login';
 import '../styles/global.css';
-import { RecoveryPassword } from '../containers/RecoveryPassword';
 import routes from './routes';
+import AppContext from '../context/AppContext';
+import useInitialState from '../hooks/useInitialState';
 
 const App = () => {
+  const initialState = useInitialState();
   return (
+    <AppContext.Provider value={initialState}>
+      <BrowserRouter history={history}>
+        <Routes>
+          <Route exact path="/" element={<Layout />} >
+            {routes}
+          </Route>
+        </Routes>
 
-    <BrowserRouter history={history}>
-
-      <Routes>
-        <Route exact path="/" element={<Layout />} >
-          {routes}
-        </Route>
-      </Routes>
-
-    </BrowserRouter>
-    // <Layout>
-    //   <LoginContainer />
-    //   <RecoveryPassword />
-    // </Layout>
+      </BrowserRouter>
+    </AppContext.Provider>
   );
 }
 
